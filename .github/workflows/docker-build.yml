@@ -48,7 +48,7 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
         
       - name: Build Docker Image
-        run: docker build ${{ secrets.DOCKERHUB_USERNAME }}/python-helloworld -t .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/python-helloworld .
         
       - name: Push to Dockerhub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/python-helloworld
